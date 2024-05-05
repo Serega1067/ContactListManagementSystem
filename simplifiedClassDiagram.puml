@@ -1,0 +1,50 @@
+@startuml simplifiedClassDiagram
+title Simplified class diagram of the contact list management system
+
+"addContact" as text1
+"updateContact" as text2
+"deleteContact" as text3
+"findContact" as text4
+
+rectangle "\t\t\t\tContactManager\t\t\t\t" as CM
+
+' skinparam linetype ortho
+' skinparam linetype polyline
+' scale 1.5 | scale 200 width | scale 100 height | scale [max] 200x100 
+
+rectangle "ContactDAOFactory" as CDAOF
+usecase "ContactDAO" as CDAO
+rectangle "ContactSimpleDAO" as CSDAO
+rectangle "ContactFileDAO" as CFDAO
+rectangle "ContactXMLDAO" as CXMLDAO
+
+CM -up-> text1
+CM -up-> text2
+CM -up-> text3
+CM -up-> text4
+
+CM -down-> CDAOF 
+CM -down-> CDAO
+CDAOF .right.> CDAO
+
+CDAO <-down- CSDAO
+CDAO <-down- CFDAO
+CDAO <-down- CXMLDAO
+
+' autonumber
+' skinparam MaxMessageSize 150
+' Actor "Пользователь" as user order 10
+' participant "Клиент" as client order 20
+' participant "Сервер" as server order 30
+' queue "Брокер" as br order 25
+' database "База" as db order 27
+
+' user -> client: Наполнить карзину и подтвердить заказ
+' client -> client: Отобразить, что заказ отправлен на оброботку
+' client -> server: Передать данные заказа
+' server -> server: Обработать заказ на сервере
+' !$st = "статус и стоимость заказа"
+' server -> server: Обновить $st
+' server --> client: Передать $st
+' client -> client: Отобразить $st
+@enduml
