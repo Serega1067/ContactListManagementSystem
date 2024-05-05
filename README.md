@@ -7,5 +7,4 @@ Basic operations:
 
 Simplified class diagram:
 
-![Image alt](https://github.com/Serega1067/ContactListManagementSystem/blob/main/out/simplifiedClassDiagram/simplifiedClassDiagram.svg)
-![Image alt](/out/simplifiedClassDiagram/simplifiedClassDiagram.svg)
+![Simplified class diagram "Contact list management system"](/out/simplifiedClassDiagram/simplifiedClassDiagram.svg)
