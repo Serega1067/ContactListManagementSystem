@@ -1,0 +1,25 @@
+@startuml diagramClassContact
+class Contact {
+    - contactId: Long
+    - firstName: String
+    - lastName: String
+    - phone: String
+    - email: String
+    + Contact()
+    + Contact(firstName: String, lastName: String,
+        phone: String, email: String)
+    + Contact(contactId: Long, firstName: String, 
+        lastName: String, phone: String, email: String)
+    + toString(): String
+    + getContactId(): Long
+    + setContactId(contactId: Long)
+    + getFirstName(): String
+    + setFirstName(firstName: String)
+    + getLastName(): String
+    + setLastName(lastName: String)
+    + getPhone(): String
+    + setPhone(phone: String)
+    + getEmail(): String
+    + setEmail(email: String)
+}
+@enduml
